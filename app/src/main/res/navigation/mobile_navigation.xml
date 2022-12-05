@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.segundaprovaanimes.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_altera2"
+            app:destination="@id/navigation_altera" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_notifications"
+            app:destination="@id/navigation_notifications" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.segundaprovaanimes.ui.dashboard.CadastraFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_cadastra" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.segundaprovaanimes.ui.detalhes.DetalhesFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_detalhes" >
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_sobre"
+        android:name="com.example.segundaprovaanimes.ui.sobre.SobreFragment"
+        tools:layout="@layout/fragment_sobre"
+        android:label="SobreFragment" />
+    <fragment
+        android:id="@+id/navigation_altera"
+        android:name="com.example.segundaprovaanimes.ui.altera.AlteraFragment"
+        android:label="AlteraFragment"
+        tools:layout="@layout/fragment_altera"
+        >
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+</navigation>

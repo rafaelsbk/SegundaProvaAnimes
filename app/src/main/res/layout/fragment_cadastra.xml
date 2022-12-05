@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.segundaprovaanimes.ui.dashboard.CadastraViewModel" />
+        <import type="com.example.segundaprovaanimes.DataBindingConverters"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.dashboard.CadastraFragment">
+
+        <EditText
+            android:id="@+id/editTextNome6"
+            android:layout_width="338dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="Onde assistir?"
+            android:inputType="textPersonName"
+            android:text="@={viewmodel.anime.ondeAss}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome5"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/editTextNome7"
+            android:layout_width="338dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="Ano de lançamento"
+            android:inputType="textPersonName"
+            android:text="@={viewmodel.anime.anoLan}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome6"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/textViewLabelCadastro"
+            android:layout_width="343dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="Insira os dados do anime"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextNome"
+            android:layout_width="338dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:ems="10"
+            android:hint="Nome do Anime"
+            android:inputType="textPersonName"
+            android:text="@={viewmodel.anime.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLabelCadastro" />
+
+        <EditText
+            android:id="@+id/editTextNome3"
+            android:layout_width="338dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Numero total de episodios"
+            android:inputType="number"
+            android:text="@={DataBindingConverters.convertIntegerToString(viewmodel.anime.qntEp)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/editTextNome4"
+            android:layout_width="338dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="Genero"
+            android:inputType="textPersonName"
+            android:text="@={viewmodel.anime.genero}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome3"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/editTextNome5"
+            android:layout_width="338dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="Classificacao/implementar"
+            android:inputType="textPersonName"
+            android:text="@={DataBindingConverters.convertIntegerToString(viewmodel.anime.classificacao)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome4"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/buttonCadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar"
+            app:backgroundTint="#4CAF50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome7"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
